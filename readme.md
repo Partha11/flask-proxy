@@ -92,7 +92,7 @@ These are the list of tasks that will be done to this project
 <!-- Markdown link & img dfn's -->
 [python-image]: https://img.shields.io/badge/3.9-orange?style=flat-square&logo=python&logoColor=white&label=python&labelColor=gray&color=3776AB
 [python-url]: https://www.python.org/downloads/release/python-390
-[flask-image]: https://img.shields.io/badge/3.0.x-000000?style=flat-square&logo=flask&logoColor=white&label=flask&labelColor=gray&color=000000
+[flask-image]: https://img.shields.io/badge/3.0.x-000000?style=flat-square&logo=flask&logoColor=white&label=flask&labelColor=gray&color=29B5E8
 [flask-url]: https://flask.palletsprojects.com/en/3.0.x/
 [code-size]: https://img.shields.io/github/languages/code-size/Partha11/flask-proxy?style=flat-square&logo=github
 [wiki]: https://github.com/Partha11/flask-proxy/wiki
