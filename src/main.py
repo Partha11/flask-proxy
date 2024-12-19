@@ -4,6 +4,7 @@ from flask import Flask, request, jsonify
 from dotenv import load_dotenv
 
 app = Flask(__name__)
+load_dotenv()
 
 APP_URL = os.getenv("APP_URL")
 APP_PORT = os.getenv("APP_PORT")
@@ -102,11 +103,11 @@ def predict():
     predictions = []
 
     for i in range(len(hf_predictions.get("predictions", []))):
-        data = hf_predictions.get("predictions", [])
-        if len(data[i]) == 0:
+        pred = hf_predictions.get("predictions", [])
+        if len(pred[i]) == 0:
             continue
-        prediction, score = format_prediction(data[i])
-        average_score = score / len(data)
+        prediction, score = format_prediction(pred[i])
+        average_score = score / len(pred)
         predictions.append(
             {
                 "id": data.get("tasks")[i].get("id"),
