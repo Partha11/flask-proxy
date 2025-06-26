@@ -91,7 +91,8 @@ By default, the server listens at the /predict endpoint. To learn how to connect
 
 - [x] Add LLM prediction support
 - [x] Add health check endpoint
-- [ ] Externalize Label Studio config for better flexibility
+- [x] Externalize Label Studio config for better flexibility
+- [ ] Add dynamic switching between LLM and Transformer-based models
 
 ## Contributing
 
