@@ -23,7 +23,7 @@
 
 ## Overview
 
-**LabelBridge** is a lightweight Flask middleware that enables seamless integration between [Label Studio](https://labelstud.io/) and your NLP/LLM models. It was built to overcome the lack of documentation around automated annotation input/output formats in Label Studio.
+**LabelBridge** is a lightweight Flask middleware that enables seamless integration between [Label Studio](https://labelstud.io/) and your Transformer-based NLP/LLM models. It was built to overcome the lack of documentation around automated annotation input/output formats in Label Studio.
 
 By acting as an intelligent proxy, LabelBridge:
 - Intercepts requests from Label Studio
@@ -96,12 +96,12 @@ By default, the server listens at the /predict endpoint. To learn how to connect
 
 ## Contributing
 
-Contributions are welcome. Please follow the 
+Contributions are welcome. You can create a pull request with a new feature or a bug fix. To contribute, follow these steps: 
 
 - Fork the repository
-- Create a feature branch: git checkout -b feature/your-feature
-- Commit your changes: git commit -am 'Add feature'
-- Push to the branch: git push origin feature/your-feature
+- Create a feature branch: `git checkout -b feature/your-feature`
+- Commit your changes: `git commit -am 'Add feature'`
+- Push to the branch: `git push origin feature/your-feature`
 - Open a Pull Request
 
 ## License
