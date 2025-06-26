@@ -1,4 +1,4 @@
-# Flask Proxy for Label Studio
+# LabelBridge
 
 [![Python Version][python-image]][python-url]
 [![Python Version][flask-image]][flask-url]

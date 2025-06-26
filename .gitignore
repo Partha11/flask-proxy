@@ -1,4 +1,12 @@
 .venv
 .env
+
+.bundle
+.jekyll-cache
+
+Gemfile.lock
+
+vendor
+_site
 __pycache__
 src/__main__.py
