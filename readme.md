@@ -1,98 +1,95 @@
-# LabelBridge
+<p align="center">
+  <img src="docs/assets/img/logo.png" alt="LabelBridge Logo" width="120" />
+</p>
 
-[![Python Version][python-image]][python-url]
-[![Python Version][flask-image]][flask-url]
-[![Code Size][code-size]][code-size]
+<h1 align="center">LabelBridge</h1>
 
-This repository contains a Flask-based proxy designed to facilitate integration between Label Studio and Hugging Face Spaces for NER tasks. The proxy acts as a middleware layer, receiving annotation requests from Label Studio, converting them into the format required by Hugging Face, and then forwarding the reformatted data to the designated Space for further processing.
+<p align="center">
+  A Flask-based proxy to connect Label Studio with NLP models and LLMs <br />
+  Automatically handles undocumented request/response formatting for smooth automated annotation.
+</p>
+
+<p align="center">
+  <a href="https://www.python.org/downloads/release/python-390">
+    <img alt="Python Version" src="https://img.shields.io/badge/3.9-orange?style=flat-square&logo=python&logoColor=white&label=python&labelColor=gray&color=3776AB" />
+  </a>
+  <a href="https://flask.palletsprojects.com/en/3.0.x/">
+    <img alt="Flask Version" src="https://img.shields.io/badge/3.0.x-000000?style=flat-square&logo=flask&logoColor=white&label=flask&labelColor=gray&color=29B5E8" />
+  </a>
+  <a href="https://github.com/Partha11/flask-proxy/issues">
+    <img alt="Issues" src="https://img.shields.io/github/issues/Partha11/flask-proxy" />
+  </a>
+</p>
+
+## Overview
+
+**LabelBridge** is a lightweight Flask middleware that enables seamless integration between [Label Studio](https://labelstud.io/) and your NLP/LLM models. It was built to overcome the lack of documentation around automated annotation input/output formats in Label Studio.
+
+By acting as an intelligent proxy, LabelBridge:
+- Intercepts requests from Label Studio
+- Reformats them into the format your NLP/LLM expects
+- Forwards predictions back in a structure Label Studio understands
+
+Originally designed for Named Entity Recognition (NER) via Hugging Face Spaces, the middleware is flexible and extendable for broader use cases in text-processing tasks.
 
 ## How It Works
-This proxy server works automatically, acting as a bridge between your huggingface space and label studio
-- Label Studio sends annotation data to the Flask proxy
-- The proxy processes and reformats the data to match Hugging Face’s requirements
-- Reformatted data is forwarded to the Hugging Face Space for further action
 
-![](header.png)
+1. Label Studio sends a model request to the Flask proxy.
+2. LabelBridge reformats the request to match the structure required by your model (e.g., Hugging Face Space).
+3. The model processes the request and returns a prediction.
+4. LabelBridge transforms the prediction into the format expected by Label Studio.
 
 ## Installation
 
-```sh
+```bash
 git clone https://github.com/Partha11/flask-proxy
-cd path/to/flask-proxy
-```
-Create a virtual environment
-```sh
+cd flask-proxy
 python3 -m venv .venv
-```
-For Linux & OS X
-
-```sh
-source .venv/bin/activate
-```
-For Windows with CMD
-
-```bash
-.\.venv\Scripts\activate.bat
-```
-For Windows with Powershell
-
-```bash
-.\.venv\Scripts\activate.ps1
+source .venv/bin/activate  # Or use .\venv\Scripts\activate on Windows
 ```
 
 ## Configuration
+Copy the environment template:
 
-Copy the .env.example file and rename it to .env, I.E:
-
-```sh
-mv .env.example .env
+```bash
+cp .env.example .env
 ```
 
-Add your huggingface space url and huggingface token to the environment file, which will be used by the proxy server.
+Add your Hugging Face Space URL and token to the .env file.
 
-## Usage example
+## Usage
 
-Start the server by using this command
+To start the server:
 
 ```python
 python -m src.main
 ```
 
-After the server starts, it will accept request on the `/predict` endpoint
+By default, the server listens at the /predict endpoint. To learn how to connect it with Label Studio, refer to the [Wiki](http://google.com).
 
-For connecting it with Label Studio, please check [Wiki][wiki].
+## Features
 
-## To Do
-These are the list of tasks that will be done to this project
+- Seamless Label Studio to NLP Model communication
+- Automatic input/output reformatting
+- Supports Hugging Face Spaces & custom NLP/LLM models
+- Built for text-based labeling tasks (NER, classification, etc.)
 
-- [x] Add LLM for prediction
-- [ ] Add data for healthcheck endpoint
-- [ ] Migrate label studio configuration to a separate file
+## Roadmap
 
-## Update History
-
-* 0.2.0
-    * ADD: Add `format_prediction()` method
-* 0.1.1
-    * FIX: Updated prediction field `task_id`
-* 0.1.0
-    * Connected model with prediction
-    * CHANGE: Updated endpoint from `/proxy_predict` to `/predict`
-* 0.0.1
-    * Initialized project
+- [x] Add LLM prediction support
+- [x] Add health check endpoint
+- [ ] Externalize Label Studio config for better flexibility
 
 ## Contributing
 
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
+Contributions are welcome. Please follow the 
 
-<!-- Markdown link & img dfn's -->
-[python-image]: https://img.shields.io/badge/3.9-orange?style=flat-square&logo=python&logoColor=white&label=python&labelColor=gray&color=3776AB
-[python-url]: https://www.python.org/downloads/release/python-390
-[flask-image]: https://img.shields.io/badge/3.0.x-000000?style=flat-square&logo=flask&logoColor=white&label=flask&labelColor=gray&color=29B5E8
-[flask-url]: https://flask.palletsprojects.com/en/3.0.x/
-[code-size]: https://img.shields.io/github/languages/code-size/Partha11/flask-proxy?style=flat-square&logo=github
-[wiki]: https://github.com/Partha11/flask-proxy/wiki
+- Fork the repository
+- Create a feature branch: git checkout -b feature/your-feature
+- Commit your changes: git commit -am 'Add feature'
+- Push to the branch: git push origin feature/your-feature
+- Open a Pull Request
+
+## License
+
+This project is open-source and distributed under the MIT License.
