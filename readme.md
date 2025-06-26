@@ -41,12 +41,25 @@ Originally designed for Named Entity Recognition (NER) via Hugging Face Spaces, 
 
 ## Installation
 
-```bash
-git clone https://github.com/Partha11/flask-proxy
-cd flask-proxy
-python3 -m venv .venv
-source .venv/bin/activate  # Or use .\venv\Scripts\activate on Windows
-```
+- Clone the repository:
+
+    ```bash
+    git clone https://github.com/Partha11/flask-proxy
+    cd flask-proxy
+    ```
+
+- Create and activate a virtual environment:
+
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate  # Or use .\venv\Scripts\activate on Windows
+    ```
+
+- Install dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## Configuration
 Copy the environment template:
