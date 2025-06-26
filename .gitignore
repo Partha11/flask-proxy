@@ -10,3 +10,4 @@ vendor
 _site
 __pycache__
 src/__main__.py
+src/main.py.bak

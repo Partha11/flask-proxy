@@ -1,0 +1,15 @@
+{
+    "labels": [
+        "PER",
+        "ORG",
+        "LOC",
+        "DATE",
+        "TIME",
+        "OBJ",
+        "GPE",
+        "CW",
+        "EVE",
+        "MISC"
+    ],
+    "type": "text"
+}
