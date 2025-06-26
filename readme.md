@@ -65,7 +65,7 @@ To start the server:
 python -m src.main
 ```
 
-By default, the server listens at the /predict endpoint. To learn how to connect it with Label Studio, refer to the [Wiki](http://google.com).
+By default, the server listens at the /predict endpoint. To learn how to connect it with Label Studio, refer to the [Wiki][wiki-url].
 
 ## Features
 
@@ -93,3 +93,6 @@ Contributions are welcome. Please follow the
 ## License
 
 This project is open-source and distributed under the MIT License.
+
+<!-- Links -->
+[wiki-url]: https://partha11.github.io/flask-proxy/
